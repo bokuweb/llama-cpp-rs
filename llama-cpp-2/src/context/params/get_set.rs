@@ -6,6 +6,13 @@ use super::{
 };
 
 impl LlamaContextParams {
+    /// Enable or disable internal performance timings.
+    #[must_use]
+    pub fn with_no_perf(mut self, no_perf: bool) -> Self {
+        self.context_params.no_perf = no_perf;
+        self
+    }
+
     /// Set the size of the context
     ///
     /// # Examples
